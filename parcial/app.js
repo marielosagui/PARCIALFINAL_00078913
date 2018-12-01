@@ -1,3 +1,4 @@
+var mongoose= require('mongoose');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,6 +8,14 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+//conexion a mongo
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://localhost/Consolas'//,{use New url Parser:true}')
+  .then(()=>console.log('Mongoose is conected'))
+  .catch((err)=>{
+    console.log(err);
+  }))
+//
 var app = express();
 
 // view engine setup
