@@ -1,8 +1,25 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: gainsboro;
+}
+
+h1{
+  font-family: 'Courier New', Courier, monospace;
+  color: darkcyan;
+  font-size: 18px;
+  float: right
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(19, 47, 58);
+}
+
+.submit{
+  color: green;
+}
+
+.thead{
+  border: 0.5em;
+  border-color: darkslategrey;
 }

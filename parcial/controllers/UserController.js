@@ -1,4 +1,4 @@
-const mongoose=require('mongoose')
+const mongoose = require('mongoose')
 postModel=require ('.../models/Post');
 
 const UserController={}
