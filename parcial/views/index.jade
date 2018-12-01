@@ -1,5 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1= Administrador de Consolas
+.errors
+
+form(action= "#",method="post" name="UserForm")
+  label(for="Nombre")Nombre
+  input(type="text"name="Nombre"placeholder="nombre")
+  label(for="Compañia")Compañia
+  input(type="text"name="Compañia" placeholder="compañia")
+  label(for="Cantidad de Juegos")Juegos
+  input(type="text" name="Juegos" placeholder="1")
+  input(type="submit",value=" Guardar")
+
+table
+  thead
+    tr
+      th ID
+      th Nombre
+      th Compañia
+      th Cant Juegos
+      th Opciones
+    tbody.listUsers
+    script(src="/javascript/main.js")
+
+
