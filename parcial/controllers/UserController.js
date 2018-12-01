@@ -24,6 +24,17 @@ UserController.create=function(req,res){
         res.json({err:{code:400,message:'Faltan Datos a ingresar',guardado}});
     }
 };
+//todos
+UserController.getAll=function(req,res){
+    postModel.find({},function(err,posts){
+        if(err){
+            res.status(500);
+            res.json({code:500,err});
+        }else{
+            res.json({ok:true,posts});
+        }
+    });
+}
 
 //Funcion para modificar registro
 UserController.update=function(req,res){
@@ -43,7 +54,14 @@ UserController.update=function(req,res){
 }
 //funcion para eliminar un registro
 UserController.delete=function(req,res){
-    let.delete={
-        
-    }
+    postModel.delete({_id:req.params.id},function(err,eliminado){
+        if(err){
+            res.status(500);
+            res.json({code:500,err});
+        }else{
+            res.json({ok:true,eliminado});
+        }
+    });
 }
+
+module.exports=UserController;
