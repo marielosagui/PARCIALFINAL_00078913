@@ -18,3 +18,17 @@ let app={
     }
 }
 
+deletePost:(event,data,tr,tbody)=>{
+    event.prevetDefault();
+    fetch('\api\post/'+ data._id,{
+        method:'DELETE'
+    }).then(res=>res.json())
+    .then(res=>{
+        if(res.ok){
+            tbody.removeChild(tr);
+        }else{
+            document.getElementsByClassName("errors")[0].innerText="No se pudo eliminar";
+        }
+    })
+}
+

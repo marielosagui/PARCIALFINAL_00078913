@@ -9,7 +9,7 @@ UserController.create=function(req,res){
         compañia:req.body.compañia,
         juegos:req.body.juegos,
     };
-    if(data.nombre&&data.compañia && data.nombre!="&& data.compañia!="){
+    if(data.nombre && data.compañia && data.nombre!="&& data.compañia!="){
         let nuevoPost=new postModel(data);
         nuevoPost.save(function(err,guardado){
             if(err){
@@ -43,7 +43,7 @@ UserController.update=function(req,res){
         compañia:req.body.compañia,
         juegos:req.body.juegos,
     };
-    postModel.findByIdAndUpdate(req.params.Id,update,function(err,old){
+    postModel.findByIdAndUpdate(req.params.id,update,function(err,old){
         if(err){
             res.status(500);
             res.json({code:500,err});
